@@ -1,52 +1,37 @@
 <script lang="ts">
 
-  let board = [[0, 0, 0],[0, 0, 0],[0, 0, 0]]
-  let currentPlayer = 1;
-  $: won = checkWin(board);
+  import { writable } from 'svelte/store';
+  import { TicTacToe } from './TicTacToe';
+  import { UltimateTicTacToe } from './UltimateTicTacToe';
 
-  // Function to handle cell clicks
+  // const game = new UltimateTicTacToe();
+
+  // let boards = writable(game.boards);
+  // let currentPlayer = writable(game.currentPlayer);
+  // let currentBoard = writable(game.currentBoard);
+
+
+  const game = new TicTacToe();
+
+  let board = writable(game.board);
+  let currentPlayer = writable(game.currentPlayer);
+
   function handleCellClick(i: number, j: number) {
-    if (board[i][j] === 0) { // Only update the cell if it's empty
-      board[i][j] = currentPlayer;
-      currentPlayer = currentPlayer === 1 ? 2 : 1; // Toggle the player
-      board = board.slice(); // This triggers reactivity
+    if (game.handleCellClick(i, j)) {
+      board.set(game.board); // Update the board state
+      currentPlayer.set(game.currentPlayer); // Update the current player
     }
   }
 
-  function checkWin(board: number[][]) {
-    // Check rows for win
-    for (let i = 0; i < 3; i++) {
-      if (board[i][0] === board[i][1] && board[i][1] === board[i][2] && board[i][0] !== 0) {
-        return board[i][0] === 1 ? 1 : 2;
-      }
-    }
-
-    // Check columns for win
-    for (let j = 0; j < 3; j++) {
-      if (board[0][j] === board[1][j] && board[1][j] === board[2][j] && board[0][j] !== 0) {
-        return board[0][j] === 1 ? 1 : 2;
-      }
-    }
-
-    // Check diagonals for win
-    if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== 0) {
-      return board[0][0] === 1 ? 1 : 2; // Top left to bottom right diagonal
-    } else if (board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[0][2] !== 0) {
-      return board[0][2] === 1 ? 1 : 2; // Top right to bottom left diagonal
-    }
-
-    let allCellsFilled = true;
-
-    // Check if all cells are filled
-    for (let i = 0; i < 3; i++) {
-      for (let j = 0; j < 3; j++) {
-        if (board[i][j] === 0) {
-          allCellsFilled = false;
-        }
-      }
-    }
-    return allCellsFilled === false ? -1 : 3;
+  function resetGame() {
+    game.resetGame(); // Resets the game's internal state
+    board.set(game.board); // Synchronize the Svelte store with the reset game board
+    currentPlayer.set(game.currentPlayer); // Reset the current player in the UI
+    // won.set(game.won); // Reset 'won' state in the UI
   }
+
+  // Use a derived store or reactive statement to track the game's win state
+  $: won = game.checkWin($board);
 </script>
 <div
   class="m-4"
@@ -54,7 +39,7 @@
   class:pointer-events-none={won === 1 || won === 2 || won === 3}
   id='container'
 >
-  {#each board as row, i}
+  {#each $board as row, i}
     <div class="flex justify-center"> <!-- flex layout for rows -->
       {#each row as cell, j}
         <button
@@ -69,6 +54,12 @@
       {/each}
     </div>
   {/each}
+</div>
+
+<div class="flex justify-center">
+  <button class="mt-4 px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition-colors" on:click={resetGame}>
+    Reset Game
+  </button>
 </div>
 
 <p class="text-center mt-4">
