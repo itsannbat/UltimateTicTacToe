@@ -3,7 +3,7 @@ import { TicTacToe } from "./TicTacToe";
 export class UltimateTicTacToe {
   boards: TicTacToe[][];
   currentBoard: [number, number] | null; // Indicates the currently active board, null if any can be played
-  currentPlayer: number;
+  currentPlayer: 1 | 2;
   globalWinner: number;
 
   constructor() {
@@ -41,22 +41,21 @@ export class UltimateTicTacToe {
       const board = this.boards[boardI][boardJ];
       if (board.board[cellI][cellJ] === 0) {
         // Ensure the cell is empty
+        board.currentPlayer = this.currentPlayer;
         const moveMade = board.handleCellClick(cellI, cellJ);
         if (moveMade) {
           // After making a move, check if the board has a winner or is tied
-          const boardWinState = board.checkWin();
+          const boardWinState = board.checkWin(board.board);
           if (boardWinState !== -1) {
             // Update global win status if necessary
             this.globalWinner = this.checkGlobalWin();
           }
+          // Update current player for the next move
+          this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
 
           // Update currentBoard for the next move based on Ultimate Tic Tac Toe rules
-          if (this.boards[cellI][cellJ].won === -1) {
-            // If the targeted board is still in play
-            this.currentBoard = [cellI, cellJ];
-          } else {
-            this.currentBoard = null; // Allow player to choose any board if the targeted board is finished
-          }
+          this.currentBoard =
+            this.boards[cellI][cellJ].won === -1 ? [cellI, cellJ] : null;
           return true; // Indicate that a move was successfully made
         }
       }
@@ -124,6 +123,7 @@ export class UltimateTicTacToe {
   resetGame() {
     this.boards.forEach((row) => row.forEach((board) => board.resetGame()));
     this.currentBoard = null;
+    this.currentPlayer = 1;
     this.globalWinner = -1;
   }
 }

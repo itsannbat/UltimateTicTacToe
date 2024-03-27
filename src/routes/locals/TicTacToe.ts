@@ -1,7 +1,9 @@
+export type spot = 0 | 1 | 2;
+
 export class TicTacToe {
-  board: number[][];
-  currentPlayer: number;
-  won: number;
+  board: spot[][];
+  currentPlayer: 1 | 2;
+  won: -1 | 1 | 2 | 3;
 
   constructor() {
     this.board = [
