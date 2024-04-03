@@ -1,6 +1,6 @@
 <script lang="ts">
 
-  import { writable } from 'svelte/store';
+  import { writable, get } from 'svelte/store';
   // import { TicTacToe } from './TicTacToe';
   import { UltimateTicTacToe } from './UltimateTicTacToe';
   import X from './X.svelte';
@@ -15,12 +15,29 @@
   let currentBoard = writable(game.currentBoard);
   let globalWinner = writable(game.globalWinner); // Ensure you have this for the overall game win condition
 
+  function aiMakeRandomMove() {
+    if (game.aiMakeRandomMove()) {
+      boards.set(game.boards);
+      currentPlayer.set(game.currentPlayer);
+      currentBoard.set(game.currentBoard);
+      globalWinner.set(game.globalWinner);
+    }
+  }
+
   function handleCellClick(boardI: number, boardJ: number, cellI: number, cellJ: number) {
     if (game.handleCellClick(boardI, boardJ, cellI, cellJ)) {
-      boards.set(game.boards); // Update the boards state
-      currentPlayer.set(game.currentPlayer); // Update the current player
-      currentBoard.set(game.currentBoard); // Update the current active board
-      globalWinner.set(game.globalWinner); // Update the global winner status
+      boards.set(game.boards);
+      currentPlayer.set(game.currentPlayer);
+      currentBoard.set(game.currentBoard);
+      globalWinner.set(game.globalWinner);
+
+      setTimeout(() => {
+        aiMakeRandomMove();
+        boards.set(game.boards);
+        currentPlayer.set(game.currentPlayer);
+        currentBoard.set(game.currentBoard);
+        globalWinner.set(game.globalWinner);
+      }, 500);
     }
   }
 

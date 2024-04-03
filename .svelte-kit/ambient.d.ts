@@ -38,6 +38,7 @@ declare module '$env/static/private' {
 	export const npm_config_global_prefix: string;
 	export const CONDA_PROMPT_MODIFIER: string;
 	export const TERM_PROGRAM_VERSION: string;
+	export const GSETTINGS_SCHEMA_DIR_CONDA_BACKUP: string;
 	export const MallocNanoZone: string;
 	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const ZDOTDIR: string;
@@ -53,6 +54,7 @@ declare module '$env/static/private' {
 	export const npm_execpath: string;
 	export const _CE_CONDA: string;
 	export const PATH: string;
+	export const GSETTINGS_SCHEMA_DIR: string;
 	export const _: string;
 	export const npm_package_json: string;
 	export const __CFBundleIdentifier: string;
@@ -134,6 +136,7 @@ declare module '$env/dynamic/private' {
 		npm_config_global_prefix: string;
 		CONDA_PROMPT_MODIFIER: string;
 		TERM_PROGRAM_VERSION: string;
+		GSETTINGS_SCHEMA_DIR_CONDA_BACKUP: string;
 		MallocNanoZone: string;
 		ORIGINAL_XDG_CURRENT_DESKTOP: string;
 		ZDOTDIR: string;
@@ -149,6 +152,7 @@ declare module '$env/dynamic/private' {
 		npm_execpath: string;
 		_CE_CONDA: string;
 		PATH: string;
+		GSETTINGS_SCHEMA_DIR: string;
 		_: string;
 		npm_package_json: string;
 		__CFBundleIdentifier: string;

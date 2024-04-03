@@ -19,9 +19,6 @@ export class UltimateTicTacToe {
     this.globalWinner = -1;
   }
 
-  // You'll need methods here similar to TicTacToe, but at the UTTT level
-  // For example, handling clicks not just on a cell, but first determining which board is active
-  // and then forwarding the click to the appropriate TicTacToe instance
   handleCellClick(
     boardI: number,
     boardJ: number,
@@ -118,6 +115,59 @@ export class UltimateTicTacToe {
 
     // If all boards are final (either won or tied), but no global winner, it's a tie.
     return allBoardsFinal ? 3 : -1;
+  }
+
+  // Method to perform a random move for AI player
+  aiMakeRandomMove(): boolean {
+    if (this.currentPlayer !== 2 || this.globalWinner !== -1) return false;
+
+    let playableBoards =
+      this.currentBoard === null
+        ? this.boards.flat()
+        : [this.boards[this.currentBoard[0]][this.currentBoard[1]]];
+
+    playableBoards = playableBoards.filter((board) => board.won === -1);
+
+    while (playableBoards.length > 0) {
+      const randomBoardIndex = Math.floor(
+        Math.random() * playableBoards.length
+      );
+      const randomBoard = playableBoards[randomBoardIndex];
+
+      const emptySpots = [];
+      for (let i = 0; i < randomBoard.board.length; i++) {
+        for (let j = 0; j < randomBoard.board[i].length; j++) {
+          if (randomBoard.board[i][j] === 0) {
+            emptySpots.push({ i, j });
+          }
+        }
+      }
+
+      if (emptySpots.length === 0) {
+        playableBoards.splice(randomBoardIndex, 1);
+        continue;
+      }
+
+      const randomSpotIndex = Math.floor(Math.random() * emptySpots.length);
+      const { i, j } = emptySpots[randomSpotIndex];
+
+      // Determine the correct board indexes
+      const boardIndexes =
+        this.currentBoard === null
+          ? {
+              boardI: Math.floor(randomBoardIndex / 3),
+              boardJ: randomBoardIndex % 3,
+            }
+          : { boardI: this.currentBoard[0], boardJ: this.currentBoard[1] };
+
+      if (
+        this.handleCellClick(boardIndexes.boardI, boardIndexes.boardJ, i, j)
+      ) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   resetGame() {

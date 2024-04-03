@@ -1,6 +1,6 @@
 <script lang="ts">
   import Cell from "./Cell.svelte";
-import O from "./O.svelte";
+  import O from "./O.svelte";
   import type { TicTacToe } from "./TicTacToe";
   import X from "./X.svelte";
 
