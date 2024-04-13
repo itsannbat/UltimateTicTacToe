@@ -79,6 +79,14 @@ export class TicTacToe {
     return allCellsFilled === false ? -1 : 3;
   }
 
+  clone(): TicTacToe {
+    const clonedBoard = new TicTacToe();
+    clonedBoard.board = this.board.map((row) => [...row]);
+    clonedBoard.currentPlayer = this.currentPlayer;
+    clonedBoard.won = this.won;
+    return clonedBoard;
+  }
+
   resetGame() {
     this.board = [
       [0, 0, 0],

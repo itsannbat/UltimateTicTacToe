@@ -1,7 +1,6 @@
 <script lang="ts">
 
   import { writable, get } from 'svelte/store';
-  // import { TicTacToe } from './TicTacToe';
   import { UltimateTicTacToe } from './UltimateTicTacToe';
   import X from './X.svelte';
   import O from './O.svelte';
@@ -16,7 +15,18 @@
   let globalWinner = writable(game.globalWinner); // Ensure you have this for the overall game win condition
 
   function aiMakeRandomMove() {
+    console.log('Random Bot')
     if (game.aiMakeRandomMove()) {
+      boards.set(game.boards);
+      currentPlayer.set(game.currentPlayer);
+      currentBoard.set(game.currentBoard);
+      globalWinner.set(game.globalWinner);
+    }
+  }
+
+  function aiMinimaxMove() {
+    console.log('Minimax Alpha Beta Bot')
+    if (game.aiMinimaxMove()) {
       boards.set(game.boards);
       currentPlayer.set(game.currentPlayer);
       currentBoard.set(game.currentBoard);
@@ -32,7 +42,7 @@
       globalWinner.set(game.globalWinner);
 
       setTimeout(() => {
-        aiMakeRandomMove();
+        aiMinimaxMove();
         boards.set(game.boards);
         currentPlayer.set(game.currentPlayer);
         currentBoard.set(game.currentBoard);

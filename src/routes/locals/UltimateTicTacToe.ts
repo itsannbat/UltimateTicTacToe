@@ -1,10 +1,12 @@
 import { TicTacToe } from "./TicTacToe";
+import { AlphaBetaAgent } from "./AlphaBetaAgent";
 
 export class UltimateTicTacToe {
   boards: TicTacToe[][];
   currentBoard: [number, number] | null; // Indicates the currently active board, null if any can be played
   currentPlayer: 1 | 2;
   globalWinner: number;
+  alphaBetaAgent: AlphaBetaAgent;
 
   constructor() {
     this.boards = Array(3)
@@ -17,6 +19,7 @@ export class UltimateTicTacToe {
     this.currentBoard = null;
     this.currentPlayer = 1;
     this.globalWinner = -1;
+    this.alphaBetaAgent = new AlphaBetaAgent(3);
   }
 
   handleCellClick(
@@ -117,6 +120,22 @@ export class UltimateTicTacToe {
     return allBoardsFinal ? 3 : -1;
   }
 
+  aiMinimaxMove(): boolean {
+    if (this.currentPlayer !== 2 || this.globalWinner !== -1) {
+      // It's not the AI's turn or the game is over
+      return false;
+    }
+
+    const bestMove = this.alphaBetaAgent.getBestMove(this);
+    if (bestMove) {
+      const [boardI, boardJ, cellI, cellJ] = bestMove;
+      return this.handleCellClick(boardI, boardJ, cellI, cellJ);
+    }
+
+    // No valid move found (should not happen in a normal game flow), or AI decides to pass
+    return false;
+  }
+
   // Method to perform a random move for AI player
   aiMakeRandomMove(): boolean {
     if (this.currentPlayer !== 2 || this.globalWinner !== -1) return false;
@@ -168,6 +187,68 @@ export class UltimateTicTacToe {
     }
 
     return false;
+  }
+
+  evaluationFunction(): number {
+    let score = 0;
+    this.boards.forEach((row) => {
+      row.forEach((board) => {
+        if (board.won === 2) score++; // AI has won the board
+        if (board.won === 1) score--; // Human has won the board
+      });
+    });
+    return score;
+  }
+
+  clone(): UltimateTicTacToe {
+    const clonedGame = new UltimateTicTacToe();
+    for (let i = 0; i < this.boards.length; i++) {
+      for (let j = 0; j < this.boards[i].length; j++) {
+        clonedGame.boards[i][j] = this.boards[i][j].clone();
+      }
+    }
+    clonedGame.currentBoard = this.currentBoard;
+    clonedGame.currentPlayer = this.currentPlayer;
+    clonedGame.globalWinner = this.globalWinner;
+    return clonedGame;
+  }
+
+  getPlayableBoards(): [number, number][] {
+    if (
+      this.currentBoard &&
+      this.boards[this.currentBoard[0]][this.currentBoard[1]].won === -1
+    ) {
+      return [this.currentBoard]; // If there's a specific board to be played on and it's not already won
+    } else {
+      // Get indices of all boards that haven't been won yet
+      return this.boards.flatMap((row, i) =>
+        row
+          .filter((board, j) => board.won === -1)
+          .map((_, j) => [i, j] as [number, number])
+      );
+    }
+  }
+
+  getPlayableMoves(): [number, number, number, number][] {
+    let playableMoves: [number, number, number, number][] = [];
+
+    // Determine playable boards based on the current game state
+    const playableBoards = this.getPlayableBoards();
+
+    // For each playable board, find all empty cells (where a move can be made)
+    playableBoards.forEach(([boardI, boardJ]) => {
+      const board = this.boards[boardI][boardJ];
+      for (let cellI = 0; cellI < board.board.length; cellI++) {
+        for (let cellJ = 0; cellJ < board.board[cellI].length; cellJ++) {
+          if (board.board[cellI][cellJ] === 0) {
+            // 0 indicates an empty cell
+            playableMoves.push([boardI, boardJ, cellI, cellJ]);
+          }
+        }
+      }
+    });
+
+    return playableMoves;
   }
 
   resetGame() {
