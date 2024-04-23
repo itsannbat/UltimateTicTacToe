@@ -14,9 +14,9 @@
   let currentBoard = writable(game.currentBoard);
   let globalWinner = writable(game.globalWinner); // Ensure you have this for the overall game win condition
 
-  function aiMakeRandomMove() {
+  async function aiMakeRandomMove() {
     console.log('Random Bot')
-    if (game.aiMakeRandomMove()) {
+    if (await game.aiMakeRandomMove()) {
       boards.set(game.boards);
       currentPlayer.set(game.currentPlayer);
       currentBoard.set(game.currentBoard);
@@ -24,9 +24,9 @@
     }
   }
 
-  function aiMinimaxMove() {
+  async function aiMinimaxMove() {
     console.log('Minimax Alpha Beta Bot')
-    if (game.aiMinimaxMove()) {
+    if (await game.aiMinimaxMove()) {
       boards.set(game.boards);
       currentPlayer.set(game.currentPlayer);
       currentBoard.set(game.currentBoard);
@@ -34,15 +34,25 @@
     }
   }
 
-  function handleCellClick(boardI: number, boardJ: number, cellI: number, cellJ: number) {
-    if (game.handleCellClick(boardI, boardJ, cellI, cellJ)) {
+  async function aiSmartMove() {
+    console.log('Smart Bot')
+    if (await game.aiSmartMove()) {
+      boards.set(game.boards);
+      currentPlayer.set(game.currentPlayer);
+      currentBoard.set(game.currentBoard);
+      globalWinner.set(game.globalWinner);
+    }
+  }
+
+  async function handleCellClick(boardI: number, boardJ: number, cellI: number, cellJ: number) {
+    if (await game.handleCellClick(boardI, boardJ, cellI, cellJ)) {
       boards.set(game.boards);
       currentPlayer.set(game.currentPlayer);
       currentBoard.set(game.currentBoard);
       globalWinner.set(game.globalWinner);
 
       setTimeout(() => {
-        aiMinimaxMove();
+        aiSmartMove();
         boards.set(game.boards);
         currentPlayer.set(game.currentPlayer);
         currentBoard.set(game.currentBoard);
@@ -57,6 +67,19 @@
     currentPlayer.set(1); // Reset the current player in the UI
     currentBoard.set(game.currentBoard); // Reset the current active board
     globalWinner.set(game.globalWinner); // Reset the global winner status
+  }
+
+  async function downloadTelemetry() {
+    const telemetryData = await game.getTelemetry();
+    const blob = new Blob([JSON.stringify(telemetryData)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = 'telemetry.json';
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+    URL.revokeObjectURL(url);
   }
 </script>
 <div class="relative">
@@ -118,4 +141,11 @@
       Reset Game
     </button>
   </div>
+
+  <div class="flex justify-center">
+    <button class="mt-4 px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition-colors" on:click={downloadTelemetry}>
+      Download Telemetry
+    </button>
+  </div>
+
 </div>

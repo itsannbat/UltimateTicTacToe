@@ -29,6 +29,7 @@ export class TicTacToe {
   }
 
   checkWin(board: number[][]) {
+    // returning properly
     // Check rows for win
     for (let i = 0; i < 3; i++) {
       if (
@@ -36,6 +37,8 @@ export class TicTacToe {
         board[i][1] === board[i][2] &&
         board[i][0] !== 0
       ) {
+        console.log("Row Win");
+        console.log(board[i][0] === 1 ? 1 : 2);
         return board[i][0] === 1 ? 1 : 2;
       }
     }
@@ -47,6 +50,8 @@ export class TicTacToe {
         board[1][j] === board[2][j] &&
         board[0][j] !== 0
       ) {
+        console.log("Column Win");
+        console.log(board[0][j] === 1 ? 1 : 2);
         return board[0][j] === 1 ? 1 : 2;
       }
     }
@@ -57,12 +62,16 @@ export class TicTacToe {
       board[1][1] === board[2][2] &&
       board[0][0] !== 0
     ) {
+      console.log("Diagonal 1 Win");
+      console.log(board[0][0] === 1 ? 1 : 2);
       return board[0][0] === 1 ? 1 : 2; // Top left to bottom right diagonal
     } else if (
       board[0][2] === board[1][1] &&
       board[1][1] === board[2][0] &&
       board[0][2] !== 0
     ) {
+      console.log("Diagonal 2 Win");
+      console.log(board[0][2] === 1 ? 1 : 2);
       return board[0][2] === 1 ? 1 : 2; // Top right to bottom left diagonal
     }
 

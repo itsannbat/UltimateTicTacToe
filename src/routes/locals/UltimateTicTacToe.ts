@@ -1,5 +1,6 @@
 import { TicTacToe } from "./TicTacToe";
 import { AlphaBetaAgent } from "./AlphaBetaAgent";
+import { set, get } from "idb-keyval";
 
 export class UltimateTicTacToe {
   boards: TicTacToe[][];
@@ -22,16 +23,15 @@ export class UltimateTicTacToe {
     this.alphaBetaAgent = new AlphaBetaAgent(3);
   }
 
-  handleCellClick(
+  async handleCellClick(
     boardI: number,
     boardJ: number,
     cellI: number,
     cellJ: number
-  ): boolean {
+  ): Promise<boolean> {
     if (this.globalWinner !== -1) {
       return false; // Do not handle clicks if the game has ended
     }
-
     // Check if the click is on the current board or if any board is playable (currentBoard is null)
     if (
       this.currentBoard === null ||
@@ -46,13 +46,28 @@ export class UltimateTicTacToe {
         if (moveMade) {
           // After making a move, check if the board has a winner or is tied
           const boardWinState = board.checkWin(board.board);
+          console.log(boardWinState);
           if (boardWinState !== -1) {
             // Update global win status if necessary
             this.globalWinner = this.checkGlobalWin();
           }
           // Update current player for the next move
           this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
-
+          const [largerBoardNotation, cellNotation] = this.printBoardNotation(
+            boardI,
+            boardJ,
+            cellI,
+            cellJ
+          ); // <- uncomment based on humans playing
+          await this.logTelemetry({
+            eventType: "move",
+            details: {
+              largerBoardNotation,
+              cellNotation,
+              currentPlayer: this.currentPlayer,
+            },
+            timestamp: new Date().toISOString(),
+          });
           // Update currentBoard for the next move based on Ultimate Tic Tac Toe rules
           this.currentBoard =
             this.boards[cellI][cellJ].won === -1 ? [cellI, cellJ] : null;
@@ -120,7 +135,7 @@ export class UltimateTicTacToe {
     return allBoardsFinal ? 3 : -1;
   }
 
-  aiMinimaxMove(): boolean {
+  async aiMinimaxMove(): Promise<boolean> {
     if (this.currentPlayer !== 2 || this.globalWinner !== -1) {
       // It's not the AI's turn or the game is over
       return false;
@@ -129,15 +144,58 @@ export class UltimateTicTacToe {
     const bestMove = this.alphaBetaAgent.getBestMove(this);
     if (bestMove) {
       const [boardI, boardJ, cellI, cellJ] = bestMove;
-      return this.handleCellClick(boardI, boardJ, cellI, cellJ);
+      const moveMade = this.handleCellClick(boardI, boardJ, cellI, cellJ);
+      if (await moveMade) {
+        // Move was successful, now print the final board notation
+        this.printBoardNotation(boardI, boardJ, cellI, cellJ);
+      }
+      return moveMade;
     }
-
-    // No valid move found (should not happen in a normal game flow), or AI decides to pass
     return false;
   }
 
+  async aiSmartMove(): Promise<boolean> {
+    if (this.currentPlayer !== 2 || this.globalWinner !== -1) return false;
+
+    let playableBoards: TicTacToe[];
+
+    if (this.currentBoard === null) {
+      playableBoards = this.boards.flat();
+    } else {
+      const [boardI, boardJ] = this.currentBoard;
+      playableBoards = [this.boards[boardI][boardJ]];
+    }
+
+    playableBoards = playableBoards.filter((board) => board.won === -1);
+
+    for (const [boardIndex, board] of playableBoards.entries()) {
+      for (let i = 0; i < board.board.length; i++) {
+        for (let j = 0; j < board.board[i].length; j++) {
+          // Check if making a move at (i, j) would result in a win for the current player
+          if (board.board[i][j] === 0) {
+            // Simulate the move
+            board.board[i][j] = this.currentPlayer;
+            if (board.checkWin(board.board) === this.currentPlayer) {
+              console.log("Winning move found");
+              // If it results in a win, then make the move
+              let boardI = Math.floor(boardIndex / 3);
+              let boardJ = boardIndex % 3;
+              return this.handleCellClick(boardI, boardJ, i, j);
+            } else {
+              // Undo the move
+              board.board[i][j] = 0;
+            }
+          }
+        }
+      }
+    }
+
+    // If no winning move is found, fallback to a random move
+    return this.aiMakeRandomMove();
+  }
+
   // Method to perform a random move for AI player
-  aiMakeRandomMove(): boolean {
+  async aiMakeRandomMove(): Promise<boolean> {
     if (this.currentPlayer !== 2 || this.globalWinner !== -1) return false;
 
     let playableBoards =
@@ -180,7 +238,12 @@ export class UltimateTicTacToe {
           : { boardI: this.currentBoard[0], boardJ: this.currentBoard[1] };
 
       if (
-        this.handleCellClick(boardIndexes.boardI, boardIndexes.boardJ, i, j)
+        await this.handleCellClick(
+          boardIndexes.boardI,
+          boardIndexes.boardJ,
+          i,
+          j
+        )
       ) {
         return true;
       }
@@ -249,6 +312,37 @@ export class UltimateTicTacToe {
     });
 
     return playableMoves;
+  }
+
+  async logTelemetry(data: any) {
+    // Retrieve the current telemetry data
+    const currentTelemetry = (await get("telemetry")) || [];
+    // Append the new data
+    currentTelemetry.push(data);
+    // Save the updated telemetry data back to IndexedDB
+    await set("telemetry", currentTelemetry);
+  }
+
+  // This method is used to retrieve the telemetry data
+  getTelemetry() {
+    // Retrieve and return the telemetry data from IndexedDB
+    return get("telemetry");
+  }
+
+  printBoardNotation(
+    boardI: number,
+    boardJ: number,
+    cellI: number,
+    cellJ: number
+  ) {
+    // Calculate the larger board's notation which is a number from 1 to 9
+    const largerBoardNotation = boardI * 3 + boardJ + 1;
+    // Calculate the cell's notation within the larger board, which is also a number from 1 to 9
+    const cellNotation = cellI * 3 + cellJ + 1;
+    console.log(
+      `Move made on Larger board: ${largerBoardNotation}, Cell: ${cellNotation}`
+    );
+    return [largerBoardNotation, cellNotation];
   }
 
   resetGame() {
