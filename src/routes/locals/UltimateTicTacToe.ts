@@ -46,7 +46,6 @@ export class UltimateTicTacToe {
         if (moveMade) {
           // After making a move, check if the board has a winner or is tied
           const boardWinState = board.checkWin(board.board);
-          console.log(boardWinState);
           if (boardWinState !== -1) {
             // Update global win status if necessary
             this.globalWinner = this.checkGlobalWin();
@@ -157,33 +156,32 @@ export class UltimateTicTacToe {
   async aiSmartMove(): Promise<boolean> {
     if (this.currentPlayer !== 2 || this.globalWinner !== -1) return false;
 
-    let playableBoards: TicTacToe[];
+    const playableBoardsCoordinates = this.getPlayableBoards().filter(
+      ([boardI, boardJ]) => this.boards[boardI][boardJ].won === -1
+    );
 
-    if (this.currentBoard === null) {
-      playableBoards = this.boards.flat();
-    } else {
-      const [boardI, boardJ] = this.currentBoard;
-      playableBoards = [this.boards[boardI][boardJ]];
-    }
+    for (const [boardI, boardJ] of playableBoardsCoordinates) {
+      const board = this.boards[boardI][boardJ];
 
-    playableBoards = playableBoards.filter((board) => board.won === -1);
-
-    for (const [boardIndex, board] of playableBoards.entries()) {
-      for (let i = 0; i < board.board.length; i++) {
-        for (let j = 0; j < board.board[i].length; j++) {
-          // Check if making a move at (i, j) would result in a win for the current player
-          if (board.board[i][j] === 0) {
+      for (let cellI = 0; cellI < board.board.length; cellI++) {
+        for (let cellJ = 0; cellJ < board.board[cellI].length; cellJ++) {
+          if (board.board[cellI][cellJ] === 0) {
+            // Clone the board for simulation
+            const clonedBoard = board.clone();
             // Simulate the move
-            board.board[i][j] = this.currentPlayer;
-            if (board.checkWin(board.board) === this.currentPlayer) {
-              console.log("Winning move found");
-              // If it results in a win, then make the move
-              let boardI = Math.floor(boardIndex / 3);
-              let boardJ = boardIndex % 3;
-              return this.handleCellClick(boardI, boardJ, i, j);
-            } else {
-              // Undo the move
-              board.board[i][j] = 0;
+            clonedBoard.board[cellI][cellJ] = this.currentPlayer;
+            // Check if the simulated move wins the game
+            if (
+              clonedBoard.checkWin(clonedBoard.board) === this.currentPlayer
+            ) {
+              // Make the actual move on the original board
+              const moveSuccess = await this.handleCellClick(
+                boardI,
+                boardJ,
+                cellI,
+                cellJ
+              );
+              return moveSuccess;
             }
           }
         }
@@ -191,7 +189,7 @@ export class UltimateTicTacToe {
     }
 
     // If no winning move is found, fallback to a random move
-    return this.aiMakeRandomMove();
+    return await this.aiMakeRandomMove();
   }
 
   // Method to perform a random move for AI player
