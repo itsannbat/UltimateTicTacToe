@@ -8,6 +8,7 @@ export class UltimateTicTacToe {
   currentPlayer: 1 | 2;
   globalWinner: number;
   alphaBetaAgent: AlphaBetaAgent;
+  turnCounter: number;
 
   constructor() {
     this.boards = Array(3)
@@ -17,6 +18,7 @@ export class UltimateTicTacToe {
           .fill(null)
           .map(() => new TicTacToe())
       );
+    this.turnCounter = 0;
     this.currentBoard = null;
     this.currentPlayer = 1;
     this.globalWinner = -1;
@@ -45,19 +47,35 @@ export class UltimateTicTacToe {
         const moveMade = board.handleCellClick(cellI, cellJ);
         if (moveMade) {
           // After making a move, check if the board has a winner or is tied
+          this.turnCounter++;
           const boardWinState = board.checkWin(board.board);
-          if (boardWinState !== -1) {
-            // Update global win status if necessary
-            this.globalWinner = this.checkGlobalWin();
-          }
-          // Update current player for the next move
-          this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
           const [largerBoardNotation, cellNotation] = this.printBoardNotation(
             boardI,
             boardJ,
             cellI,
             cellJ
-          ); // <- uncomment based on humans playing
+          );
+          if (boardWinState !== -1) {
+            // Update global win status if necessary
+            await this.logTelemetry({
+              eventType: "completedSmallerBoard",
+              details: {
+                largerBoardNotation,
+                cellNotation,
+                currentPlayer: this.currentPlayer,
+              },
+              timestamp: new Date().toISOString(),
+            });
+            this.globalWinner = await this.checkGlobalWin(
+              boardI,
+              boardJ,
+              cellI,
+              cellJ
+            );
+          }
+          // Update current player for the next move
+          this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
+          // <- uncomment based on humans playing
           await this.logTelemetry({
             eventType: "move",
             details: {
@@ -77,10 +95,21 @@ export class UltimateTicTacToe {
     return false; // Click was not valid or did not result in a move
   }
 
-  checkGlobalWin() {
+  async checkGlobalWin(
+    boardI: number,
+    boardJ: number,
+    cellI: number,
+    cellJ: number
+  ) {
     // This method will check each TicTacToe instance to see if there's a winner for the entire UTTT game
     // It's similar to checkWin in TicTacToe, but operates on the won status of each board
     const winStates = this.boards.map((row) => row.map((board) => board.won));
+    const [largerBoardNotation, cellNotation] = this.printBoardNotation(
+      boardI,
+      boardJ,
+      cellI,
+      cellJ
+    );
 
     // Check rows for global win
     for (let i = 0; i < 3; i++) {
@@ -89,6 +118,15 @@ export class UltimateTicTacToe {
         winStates[i][1] === winStates[i][2] &&
         winStates[i][0] > 0
       ) {
+        await this.logTelemetry({
+          eventType: "completedLargBoard",
+          details: {
+            largerBoardNotation,
+            cellNotation,
+            currentPlayer: this.currentPlayer,
+          },
+          timestamp: new Date().toISOString(),
+        });
         return winStates[i][0];
       }
     }
@@ -100,6 +138,15 @@ export class UltimateTicTacToe {
         winStates[1][j] === winStates[2][j] &&
         winStates[0][j] > 0
       ) {
+        await this.logTelemetry({
+          eventType: "completedLargBoard",
+          details: {
+            largerBoardNotation,
+            cellNotation,
+            currentPlayer: this.currentPlayer,
+          },
+          timestamp: new Date().toISOString(),
+        });
         return winStates[0][j];
       }
     }
@@ -110,12 +157,30 @@ export class UltimateTicTacToe {
       winStates[1][1] === winStates[2][2] &&
       winStates[0][0] > 0
     ) {
+      await this.logTelemetry({
+        eventType: "completedLargBoard",
+        details: {
+          largerBoardNotation,
+          cellNotation,
+          currentPlayer: this.currentPlayer,
+        },
+        timestamp: new Date().toISOString(),
+      });
       return winStates[0][0];
     } else if (
       winStates[0][2] === winStates[1][1] &&
       winStates[1][1] === winStates[2][0] &&
       winStates[0][2] > 0
     ) {
+      await this.logTelemetry({
+        eventType: "completedLargBoard",
+        details: {
+          largerBoardNotation,
+          cellNotation,
+          currentPlayer: this.currentPlayer,
+        },
+        timestamp: new Date().toISOString(),
+      });
       return winStates[0][2];
     }
 
@@ -348,5 +413,6 @@ export class UltimateTicTacToe {
     this.currentBoard = null;
     this.currentPlayer = 1;
     this.globalWinner = -1;
+    this.turnCounter = 0;
   }
 }

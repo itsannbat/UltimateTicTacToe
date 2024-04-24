@@ -1,0 +1,3008 @@
+[
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:25:52.736Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:25:53.287Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:00.218Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:00.721Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:02.022Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:02.526Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:03.676Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:05.442Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:06.986Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:07.489Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:08.314Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:08.816Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 8,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:09.834Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:10.335Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 3,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:11.290Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:11.794Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:12.615Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:13.119Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:14.145Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:14.648Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:15.838Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:16.340Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 2,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:17.447Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:17.951Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 2,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:18.867Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:19.369Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 7,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:20.466Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:20.970Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:21.823Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:22.326Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 7,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:23.256Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:23.759Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 7,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:24.879Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:26.198Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 8,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:26:27.142Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:26:27.645Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:39:33.734Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:39:34.248Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:39:37.042Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:39:37.543Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:39:38.566Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:44:12.519Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:44:13.032Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:44:13.926Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:44:14.427Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:44:15.407Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:45:07.506Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:45:08.011Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:45:08.815Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:45:09.317Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:45:10.164Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:45:10.666Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:45:11.602Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:45:16.499Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:45:17.002Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:45:17.837Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:45:18.340Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:45:19.259Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:45:19.761Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:45:20.821Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:52:27.553Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:52:29.959Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:52:30.951Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:52:36.601Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:52:37.105Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:52:37.906Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:52:38.408Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:52:39.259Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T21:52:39.762Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T21:52:40.658Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:01:04.981Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:01:05.484Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:01:06.245Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:01:06.746Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:01:07.539Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:01:08.040Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:01:08.844Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:01:09.346Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:01:10.186Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:01:12.009Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:01:47.741Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:01:48.245Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:01:49.093Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:01:49.597Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:01:50.542Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:01:53.038Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:01:54.793Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:01:55.298Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:10.745Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:11.249Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:11.996Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:12.498Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:13.888Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:14.390Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:15.576Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:16.079Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:18.660Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 5,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:19.164Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 2,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:20.630Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:21.132Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:22.407Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:22.910Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 8,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:24.904Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:25.406Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:26.913Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:27.415Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:28.460Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:28.963Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 2,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:30.317Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:30.819Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 8,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:32.163Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:32.665Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 2,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:02:34.108Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:02:34.611Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:06:21.386Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:06:21.890Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 2,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:06:22.855Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:06:23.358Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:06:24.429Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:06:24.931Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:06:26.036Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:06:26.540Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:06:27.795Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:19:10.769Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:19:11.274Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:19:11.964Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:19:12.467Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:19:13.289Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:19:13.792Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:19:14.680Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:19:15.183Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:19:16.022Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:23:56.051Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:23:56.557Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:23:57.328Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:23:57.831Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:23:58.675Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:24:50.992Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 4,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:24:52.845Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:24:53.347Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:25:54.794Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:25:55.302Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:26:20.496Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:26:21.001Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:26:31.903Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:26:32.410Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:26:33.198Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:26:33.702Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:26:34.686Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:26:35.190Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:26:36.208Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:26:36.711Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:26:37.740Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:31:55.574Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:31:55.578Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:31:57.012Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:31:57.014Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:31:58.075Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:32:01.518Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:32:54.642Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:32:55.160Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:32:56.457Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:32:56.960Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:32:59.685Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:34:38.565Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:34:39.068Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:34:44.661Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:34:45.164Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:34:47.666Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:35:13.044Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:35:13.549Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:35:25.241Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:35:25.745Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:35:28.709Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:35:29.212Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:35:32.099Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:36:17.930Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:39:44.667Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:39:45.172Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:39:46.813Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:39:47.317Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:39:48.183Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:40:03.174Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:40:03.678Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:40:04.600Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:40:05.105Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:40:05.937Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:40:35.553Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:40:36.057Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:40:36.847Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:40:37.349Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:40:38.111Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:40:38.618Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:07.097Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:07.601Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:09.171Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:09.676Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:10.460Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:10.964Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:12.547Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:13.052Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:15.790Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:16.295Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:39.736Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:40.258Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:40.978Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:41.481Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:42.244Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:42.749Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:43.476Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:43.980Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 4,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:44.931Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:45.434Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 4,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:47.317Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:47.820Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:44:49.003Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:44:49.506Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:50:37.575Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:50:38.079Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:50:38.688Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:50:39.190Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:50:40.055Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:50:40.558Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:50:41.518Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:50:42.020Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:50:43.144Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:50:43.645Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 7,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-23T22:50:44.811Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-23T22:50:45.313Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:57:53.858Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:57:54.378Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:57:55.224Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:57:55.725Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:57:56.533Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:57:57.035Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:57:57.036Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:57:57.904Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:57:58.406Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:57:59.750Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:00.252Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:01.278Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 9,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:01.279Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:01.780Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 8,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:02.694Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:03.197Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:04.081Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:04.583Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:06.108Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:06.615Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:08.535Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 6,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:09.039Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 6,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:09.042Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:10.250Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 9,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:10.253Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:10.755Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:13.544Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:14.048Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:15.609Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:16.112Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 4,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:18.236Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 8,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:18.740Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:18.743Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 2,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:19.571Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:20.074Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:21.462Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:58:21.965Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:58:21.967Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 7,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:13.804Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:14.307Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:15.495Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 3,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:15.496Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:18.608Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:19.112Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:19.863Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:20.366Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 6,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:21.255Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:21.759Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:23.394Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:23.898Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:23.906Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 4,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:25.501Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:26.007Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 7,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:26.866Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:27.369Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 3,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:28.022Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:28.525Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:29.562Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:30.066Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:31.161Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:31.664Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:33.309Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:33.814Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 7,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:35.793Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:36.296Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 7,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:38.047Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 8,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:38.551Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:38.554Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 3,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:40.008Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:40.513Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:43.619Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 2,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T18:59:44.121Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T18:59:44.128Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:13.601Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:14.119Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:15.316Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:15.818Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:16.711Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:17.213Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 5,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:17.216Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:18.719Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 7,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:19.221Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 7,
+      "cellNotation": 2,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:20.553Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:21.055Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 6,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:23.284Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:23.788Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:25.840Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:26.344Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 6,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:27.593Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 9,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:28.096Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 6,
+      "cellNotation": 9,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:28.103Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 9,
+      "cellNotation": 5,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:29.084Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:29.588Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:30.710Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 1,
+      "cellNotation": 4,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:30.713Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 2,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:31.217Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 2,
+      "cellNotation": 4,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:33.910Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 8,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:34.416Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 4,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:35.353Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 8,
+      "cellNotation": 4,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:35.355Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 1,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:35.859Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 3,
+      "cellNotation": 6,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:37.745Z"
+  },
+  {
+    "eventType": "completedSmallerBoard",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 3,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:38.248Z"
+  },
+  {
+    "eventType": "completedLargBoard",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 3,
+      "currentPlayer": 2
+    },
+    "timestamp": "2024-04-24T19:43:38.256Z"
+  },
+  {
+    "eventType": "move",
+    "details": {
+      "largerBoardNotation": 4,
+      "cellNotation": 3,
+      "currentPlayer": 1
+    },
+    "timestamp": "2024-04-24T19:43:38.261Z"
+  }
+]
