@@ -9,8 +9,10 @@ export class UltimateTicTacToe {
   globalWinner: number;
   alphaBetaAgent: AlphaBetaAgent;
   turnCounter: number;
+  strategyX: string; // Strategy for player X
+  strategyO: string; // Strategy for player O
 
-  constructor() {
+  constructor(strategyX = "human", strategyO = "human") {
     this.boards = Array(3)
       .fill(null)
       .map(() =>
@@ -23,6 +25,9 @@ export class UltimateTicTacToe {
     this.currentPlayer = 1;
     this.globalWinner = -1;
     this.alphaBetaAgent = new AlphaBetaAgent(3);
+    this.strategyX = strategyX;
+    this.strategyO = strategyO;
+    this.initGame();
   }
 
   async handleCellClick(
@@ -313,6 +318,34 @@ export class UltimateTicTacToe {
     }
 
     return false;
+  }
+
+  async aiMakeMove() {
+    const currentStrategy =
+      this.currentPlayer === 1 ? this.strategyX : this.strategyO;
+    switch (currentStrategy) {
+      case "minimax":
+        await this.aiMinimaxMove();
+        break;
+      case "smart":
+        await this.aiSmartMove();
+        break;
+      case "random":
+        await this.aiMakeRandomMove();
+        break;
+      case "human":
+        break; // Do nothing if human
+    }
+  }
+
+  async initGame() {
+    // Auto-start the game if both players are bots
+    if (
+      (this.currentPlayer === 1 && this.strategyX !== "human") ||
+      (this.currentPlayer === 2 && this.strategyO !== "human")
+    ) {
+      await this.aiMakeMove();
+    }
   }
 
   evaluationFunction(): number {
