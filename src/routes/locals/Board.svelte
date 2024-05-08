@@ -18,13 +18,15 @@
   let strategyO = writable('human'); // Strategy for player O
 
   async function aiMakeRandomMove() {
-    console.log('Random Bot')
+    console.log('Random Bot');
     if (await game.aiMakeRandomMove()) {
-      console.log('Moved')
-      boards.set(game.boards);
-      currentPlayer.set(game.currentPlayer);
-      currentBoard.set(game.currentBoard);
-      globalWinner.set(game.globalWinner);
+      console.log('Moved');
+      updateGameState();
+      setTimeout(() => {
+        if ($globalWinner === -1) {
+          aiMakeMove();  // Make next move if game is not over
+        }
+      }, 1000); // TODO: current issue is that having these delays will have one of the bots move and then the other moves instantly and theyll think
     }
   }
 
@@ -32,27 +34,30 @@
     console.log('Minimax Alpha Beta Bot')
     if (await game.aiMinimaxMove()) {
       console.log('Moved')
-      boards.set(game.boards);
-      currentPlayer.set(game.currentPlayer);
-      currentBoard.set(game.currentBoard);
-      globalWinner.set(game.globalWinner);
+      updateGameState();
+      setTimeout(() => {
+        if ($globalWinner === -1) {
+          aiMakeMove();  // Make next move if game is not over
+        }
+      }, 1000);
     }
   }
 
   async function aiSmartMove() {
     console.log('Smart Bot')
     if (await game.aiSmartMove()) {
-      console.log('Moved')
-      boards.set(game.boards);
-      currentPlayer.set(game.currentPlayer);
-      currentBoard.set(game.currentBoard);
-      globalWinner.set(game.globalWinner);
+      // console.log('Moved')
+      updateGameState();
+      setTimeout(() => {
+        if ($globalWinner === -1) {
+          aiMakeMove();  // Make next move if game is not over
+        }
+      }, 1000);
     }
   }
 
   function aiMakeMove() {
-    if ($globalWinner !== -1) return; // No move if the game is over
-
+    if ($globalWinner !== -1) return; // Stop if the game is over
     let strategy = $currentPlayer === 1 ? $strategyX : $strategyO;
     switch (strategy) {
       case 'random':
@@ -65,16 +70,17 @@
         aiSmartMove();
         break;
       case 'human':
-        // Do nothing if the strategy is human
         break;
     }
   }
 
   function onStrategyChange() {
-    console.log('Strategy Change:', $strategyX, $strategyO);
+    // console.log('Strategy Change:', $strategyX, $strategyO);
+    game.strategyO = get(strategyO);
+    game.strategyX = get(strategyX);
     if ($globalWinner === -1) {
       if (($currentPlayer === 1 && $strategyX !== 'human') || ($currentPlayer === 2 && $strategyO !== 'human')) {
-        console.log('AI should move now');
+        // console.log('AI should move now');
         aiMakeMove();
       }
     }
@@ -83,64 +89,12 @@
   $: $strategyX, onStrategyChange(); // Reactively call onStrategyChange when strategyX changes
   $: $strategyO, onStrategyChange(); // Reactively call onStrategyChange when strategyO changes
 
-  function updateStrategyX(newStrategy: string) {
-    strategyX = newStrategy;
-    game.setStrategyX(newStrategy);
-  }
-
-  function updateStrategyO(newStrategy: string) {
-    strategyO = newStrategy;
-    game.setStrategyO(newStrategy);
-  }
-
-  function setStrategyX(newStrategy: string) {
-    this.strategyX = newStrategy;
-    if (this.currentPlayer === 1 && newStrategy !== 'human') {
-        this.aiMakeMove();  // Trigger an AI move if it's AI's turn
-    }
-}
-
-  function setStrategyO(newStrategy: string) {
-    this.strategyO = newStrategy;
-    if (this.currentPlayer === 2 && newStrategy !== 'human') {
-        this.aiMakeMove();  // Trigger an AI move if it's AI's turn
-    }
-  }
-
-
-  // async function handleCellClick(boardI: number, boardJ: number, cellI: number, cellJ: number) {
-  //   if (await game.handleCellClick(boardI, boardJ, cellI, cellJ)) {
-  //     boards.set(game.boards);
-  //     currentPlayer.set(game.currentPlayer);
-  //     currentBoard.set(game.currentBoard);
-  //     globalWinner.set(game.globalWinner);
-
-  //     setTimeout(() => {
-  //       aiSmartMove();
-  //       boards.set(game.boards);
-  //       currentPlayer.set(game.currentPlayer);
-  //       currentBoard.set(game.currentBoard);
-  //       globalWinner.set(game.globalWinner);
-  //     }, 500);
-  //   }
-  // }
-
   async function handleCellClick(boardI: number, boardJ: number, cellI: number, cellJ: number) {
     if ($currentPlayer === 1 && $strategyX === 'human' || $currentPlayer === 2 && $strategyO === 'human') {
       if (await game.handleCellClick(boardI, boardJ, cellI, cellJ)) {
         updateGameState();
-        checkAndMakeAiMove();
       }
     }
-  }
-
-  function checkAndMakeAiMove() {
-    // Check if the next player is AI and if so, make a move
-    setTimeout(() => {
-      if ($globalWinner === -1) {
-        aiMakeMove();
-      }
-    }, 500); // Delay to simulate real time between moves
   }
 
   function updateGameState() {
@@ -174,7 +128,7 @@
 <div class="flex flex-col items-center">
   <div class="mb-4">
     <label class="font-bold mr-2">X:</label>
-    <select bind:value={$strategyX} class="border-2 border-black p-1 rounded-md" on:change="{() => updateStrategyX(strategyX)}">
+    <select bind:value={$strategyX} class="border-2 border-black p-1 rounded-md" on:change={onStrategyChange}>
       <option value="random">Random Bot</option>
       <option value="minimax">Minimax Bot</option>
       <option value="smart">Smart Bot</option>
@@ -220,7 +174,7 @@
   </div>
   <div class="mt-4">
     <label class="font-bold mr-2">O:</label>
-    <select bind:value={$strategyO} class="border-2 border-black p-1 rounded-md" on:change="{() => updateStrategyO(strategyO)}">
+    <select bind:value={$strategyO} class="border-2 border-black p-1 rounded-md" on:change={onStrategyChange}>
       <option value="random">Random Bot</option>
       <option value="minimax">Minimax Bot</option>
       <option value="smart">Smart Bot</option>

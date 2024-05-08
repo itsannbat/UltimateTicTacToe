@@ -30,7 +30,7 @@ export class AlphaBetaAgent {
 
       for (const move of moves) {
         const newGame = game.clone();
-        newGame.handleCellClick(move[0], move[1], move[2], move[3]);
+        newGame.simulateMove(move[0], move[1], move[2], move[3]);
         const [evaluationScore] = this.minimax(
           newGame,
           depth - 1,

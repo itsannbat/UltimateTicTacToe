@@ -27,14 +27,13 @@ export class UltimateTicTacToe {
     this.alphaBetaAgent = new AlphaBetaAgent(3);
     this.strategyX = strategyX;
     this.strategyO = strategyO;
-    this.initGame();
   }
 
   async handleCellClick(
     boardI: number,
     boardJ: number,
     cellI: number,
-    cellJ: number
+    cellJ: number,
   ): Promise<boolean> {
     if (this.globalWinner !== -1) {
       return false; // Do not handle clicks if the game has ended
@@ -90,6 +89,51 @@ export class UltimateTicTacToe {
             },
             timestamp: new Date().toISOString(),
           });
+          // Update currentBoard for the next move based on Ultimate Tic Tac Toe rules
+          this.currentBoard =
+            this.boards[cellI][cellJ].won === -1 ? [cellI, cellJ] : null;
+          return true; // Indicate that a move was successfully made
+        }
+      }
+    }
+    return false; // Click was not valid or did not result in a move
+  }
+
+  async simulateMove(
+    boardI: number,
+    boardJ: number,
+    cellI: number,
+    cellJ: number,
+  ): Promise<boolean> {
+    if (this.globalWinner !== -1) {
+      return false; // Do not handle clicks if the game has ended
+    }
+    // Check if the click is on the current board or if any board is playable (currentBoard is null)
+    if (
+      this.currentBoard === null ||
+      (this.currentBoard[0] === boardI && this.currentBoard[1] === boardJ)
+    ) {
+      // Proceed only if the cell is not already filled
+      const board = this.boards[boardI][boardJ];
+      if (board.board[cellI][cellJ] === 0) {
+        // Ensure the cell is empty
+        board.currentPlayer = this.currentPlayer;
+        const moveMade = board.simulateMove(cellI, cellJ);
+        if (moveMade) {
+          // After making a move, check if the board has a winner or is tied
+          this.turnCounter++;
+          const boardWinState = board.checkWin(board.board);
+          if (boardWinState !== -1) {
+            // Update global win status if necessary
+            this.globalWinner = await this.checkGlobalWin(
+              boardI,
+              boardJ,
+              cellI,
+              cellJ
+            );
+          }
+          // Update current player for the next move
+          this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
           // Update currentBoard for the next move based on Ultimate Tic Tac Toe rules
           this.currentBoard =
             this.boards[cellI][cellJ].won === -1 ? [cellI, cellJ] : null;
@@ -205,15 +249,20 @@ export class UltimateTicTacToe {
   }
 
   async aiMinimaxMove(): Promise<boolean> {
-    if (this.currentPlayer !== 2 || this.globalWinner !== -1) {
-      // It's not the AI's turn or the game is over
+    if (
+      (this.currentPlayer === 1 && this.strategyX !== "minimax") ||
+      (this.currentPlayer === 2 && this.strategyO !== "minimax") ||
+      this.globalWinner !== -1
+    ) {
       return false;
     }
-
+    console.log("called by who?");
     const bestMove = this.alphaBetaAgent.getBestMove(this);
+    console.log("Best Move: ", bestMove);
     if (bestMove) {
       const [boardI, boardJ, cellI, cellJ] = bestMove;
       const moveMade = this.handleCellClick(boardI, boardJ, cellI, cellJ);
+      console.log("Move Made: ", moveMade);
       if (await moveMade) {
         // Move was successful, now print the final board notation
         this.printBoardNotation(boardI, boardJ, cellI, cellJ);
@@ -224,7 +273,13 @@ export class UltimateTicTacToe {
   }
 
   async aiSmartMove(): Promise<boolean> {
-    if (this.currentPlayer !== 2 || this.globalWinner !== -1) return false;
+    if (
+      (this.currentPlayer === 1 && this.strategyX !== "smart") ||
+      (this.currentPlayer === 2 && this.strategyO !== "smart") ||
+      this.globalWinner !== -1
+    ) {
+      return false;
+    }
 
     const playableBoardsCoordinates = this.getPlayableBoards().filter(
       ([boardI, boardJ]) => this.boards[boardI][boardJ].won === -1
@@ -259,13 +314,7 @@ export class UltimateTicTacToe {
     }
 
     // If no winning move is found, fallback to a random move
-    return await this.aiMakeRandomMove();
-  }
-
-  // Method to perform a random move for AI player
-  async aiMakeRandomMove(): Promise<boolean> {
-    if (this.currentPlayer !== 2 || this.globalWinner !== -1) return false;
-
+    // return await this.aiMakeRandomMove();
     let playableBoards =
       this.currentBoard === null
         ? this.boards.flat()
@@ -320,32 +369,68 @@ export class UltimateTicTacToe {
     return false;
   }
 
-  async aiMakeMove() {
-    const currentStrategy =
-      this.currentPlayer === 1 ? this.strategyX : this.strategyO;
-    switch (currentStrategy) {
-      case "minimax":
-        await this.aiMinimaxMove();
-        break;
-      case "smart":
-        await this.aiSmartMove();
-        break;
-      case "random":
-        await this.aiMakeRandomMove();
-        break;
-      case "human":
-        break; // Do nothing if human
-    }
-  }
-
-  async initGame() {
-    // Auto-start the game if both players are bots
+  // Method to perform a random move for AI player
+  async aiMakeRandomMove(): Promise<boolean> {
     if (
-      (this.currentPlayer === 1 && this.strategyX !== "human") ||
-      (this.currentPlayer === 2 && this.strategyO !== "human")
+      (this.currentPlayer === 1 && this.strategyX !== "random") ||
+      (this.currentPlayer === 2 && this.strategyO !== "random") ||
+      this.globalWinner !== -1
     ) {
-      await this.aiMakeMove();
+      return false;
     }
+
+    let playableBoards =
+      this.currentBoard === null
+        ? this.boards.flat()
+        : [this.boards[this.currentBoard[0]][this.currentBoard[1]]];
+
+    playableBoards = playableBoards.filter((board) => board.won === -1);
+
+    while (playableBoards.length > 0) {
+      const randomBoardIndex = Math.floor(
+        Math.random() * playableBoards.length
+      );
+      const randomBoard = playableBoards[randomBoardIndex];
+
+      const emptySpots = [];
+      for (let i = 0; i < randomBoard.board.length; i++) {
+        for (let j = 0; j < randomBoard.board[i].length; j++) {
+          if (randomBoard.board[i][j] === 0) {
+            emptySpots.push({ i, j });
+          }
+        }
+      }
+
+      if (emptySpots.length === 0) {
+        playableBoards.splice(randomBoardIndex, 1);
+        continue;
+      }
+
+      const randomSpotIndex = Math.floor(Math.random() * emptySpots.length);
+      const { i, j } = emptySpots[randomSpotIndex];
+
+      // Determine the correct board indexes
+      const boardIndexes =
+        this.currentBoard === null
+          ? {
+              boardI: Math.floor(randomBoardIndex / 3),
+              boardJ: randomBoardIndex % 3,
+            }
+          : { boardI: this.currentBoard[0], boardJ: this.currentBoard[1] };
+
+      if (
+        await this.handleCellClick(
+          boardIndexes.boardI,
+          boardIndexes.boardJ,
+          i,
+          j
+        )
+      ) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   evaluationFunction(): number {

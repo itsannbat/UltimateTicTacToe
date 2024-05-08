@@ -28,6 +28,14 @@ export class TicTacToe {
     }
   }
 
+  simulateMove(cellI: number, cellJ: number): number {
+    if (this.board[cellI][cellJ] === 0) {
+      this.board[cellI][cellJ] = this.currentPlayer; // Temporarily set the player
+      return this.checkWin(this.board); // Check win condition
+    }
+    return -1; // Return -1 if move is not valid
+  }
+
   checkWin(board: number[][]) {
     // returning properly
     // Check rows for win
