@@ -5,7 +5,7 @@ import { set, get } from "idb-keyval";
 export class UltimateTicTacToe {
   boards: TicTacToe[][];
   currentBoard: [number, number] | null; // Indicates the currently active board, null if any can be played
-  currentPlayer: 1 | 2;
+  currentPlayer: 1 | 2; // 1 for X, 2 for O
   globalWinner: number;
   alphaBetaAgent: AlphaBetaAgent;
   turnCounter: number;
@@ -33,7 +33,7 @@ export class UltimateTicTacToe {
     boardI: number,
     boardJ: number,
     cellI: number,
-    cellJ: number,
+    cellJ: number
   ): Promise<boolean> {
     if (this.globalWinner !== -1) {
       return false; // Do not handle clicks if the game has ended
@@ -45,7 +45,7 @@ export class UltimateTicTacToe {
     ) {
       // Proceed only if the cell is not already filled
       const board = this.boards[boardI][boardJ];
-      if (board.board[cellI][cellJ] === 0) {
+      if (board.won === -1 && board.board[cellI][cellJ] === 0) {
         // Ensure the cell is empty
         board.currentPlayer = this.currentPlayer;
         const moveMade = board.handleCellClick(cellI, cellJ);
@@ -59,6 +59,8 @@ export class UltimateTicTacToe {
             cellI,
             cellJ
           );
+          const bot =
+            this.currentPlayer === 1 ? this.strategyX : this.strategyO;
           if (boardWinState !== -1) {
             // Update global win status if necessary
             await this.logTelemetry({
@@ -67,6 +69,7 @@ export class UltimateTicTacToe {
                 largerBoardNotation,
                 cellNotation,
                 currentPlayer: this.currentPlayer,
+                bot: bot,
               },
               timestamp: new Date().toISOString(),
             });
@@ -86,6 +89,7 @@ export class UltimateTicTacToe {
               largerBoardNotation,
               cellNotation,
               currentPlayer: this.currentPlayer,
+              bot: bot,
             },
             timestamp: new Date().toISOString(),
           });
@@ -95,6 +99,8 @@ export class UltimateTicTacToe {
           return true; // Indicate that a move was successfully made
         }
       }
+    } else {
+      console.log(`Move attempted on inactive or completed board.`);
     }
     return false; // Click was not valid or did not result in a move
   }
@@ -103,7 +109,7 @@ export class UltimateTicTacToe {
     boardI: number,
     boardJ: number,
     cellI: number,
-    cellJ: number,
+    cellJ: number
   ): Promise<boolean> {
     if (this.globalWinner !== -1) {
       return false; // Do not handle clicks if the game has ended
@@ -256,19 +262,24 @@ export class UltimateTicTacToe {
     ) {
       return false;
     }
-    console.log("called by who?");
+
+    const playableMoves = this.getPlayableMoves();
+    if (playableMoves.length === 0) {
+      console.log("No moves available");
+      return false;
+    }
+
     const bestMove = this.alphaBetaAgent.getBestMove(this);
-    console.log("Best Move: ", bestMove);
     if (bestMove) {
       const [boardI, boardJ, cellI, cellJ] = bestMove;
-      const moveMade = this.handleCellClick(boardI, boardJ, cellI, cellJ);
-      console.log("Move Made: ", moveMade);
-      if (await moveMade) {
+      const moveMade = await this.handleCellClick(boardI, boardJ, cellI, cellJ);
+      if (moveMade) {
         // Move was successful, now print the final board notation
         this.printBoardNotation(boardI, boardJ, cellI, cellJ);
+        return true;
       }
-      return moveMade;
     }
+
     return false;
   }
 
@@ -281,92 +292,28 @@ export class UltimateTicTacToe {
       return false;
     }
 
-    const playableBoardsCoordinates = this.getPlayableBoards().filter(
-      ([boardI, boardJ]) => this.boards[boardI][boardJ].won === -1
-    );
+    const playableMoves = this.getPlayableMoves();
+    if (playableMoves.length === 0) {
+      console.log("No moves available");
+      return false;
+    }
 
-    for (const [boardI, boardJ] of playableBoardsCoordinates) {
+    for (const [boardI, boardJ, cellI, cellJ] of playableMoves) {
       const board = this.boards[boardI][boardJ];
+      if (board.board[cellI][cellJ] === 0) {
+        const clonedBoard = board.clone();
+        clonedBoard.board[cellI][cellJ] = this.currentPlayer;
 
-      for (let cellI = 0; cellI < board.board.length; cellI++) {
-        for (let cellJ = 0; cellJ < board.board[cellI].length; cellJ++) {
-          if (board.board[cellI][cellJ] === 0) {
-            // Clone the board for simulation
-            const clonedBoard = board.clone();
-            // Simulate the move
-            clonedBoard.board[cellI][cellJ] = this.currentPlayer;
-            // Check if the simulated move wins the game
-            if (
-              clonedBoard.checkWin(clonedBoard.board) === this.currentPlayer
-            ) {
-              // Make the actual move on the original board
-              const moveSuccess = await this.handleCellClick(
-                boardI,
-                boardJ,
-                cellI,
-                cellJ
-              );
-              return moveSuccess;
-            }
-          }
+        if (clonedBoard.checkWin(clonedBoard.board) === this.currentPlayer) {
+          return this.handleCellClick(boardI, boardJ, cellI, cellJ);
         }
       }
     }
 
-    // If no winning move is found, fallback to a random move
-    // return await this.aiMakeRandomMove();
-    let playableBoards =
-      this.currentBoard === null
-        ? this.boards.flat()
-        : [this.boards[this.currentBoard[0]][this.currentBoard[1]]];
+    const randomMoveIndex = Math.floor(Math.random() * playableMoves.length);
+    const [boardI, boardJ, cellI, cellJ] = playableMoves[randomMoveIndex];
 
-    playableBoards = playableBoards.filter((board) => board.won === -1);
-
-    while (playableBoards.length > 0) {
-      const randomBoardIndex = Math.floor(
-        Math.random() * playableBoards.length
-      );
-      const randomBoard = playableBoards[randomBoardIndex];
-
-      const emptySpots = [];
-      for (let i = 0; i < randomBoard.board.length; i++) {
-        for (let j = 0; j < randomBoard.board[i].length; j++) {
-          if (randomBoard.board[i][j] === 0) {
-            emptySpots.push({ i, j });
-          }
-        }
-      }
-
-      if (emptySpots.length === 0) {
-        playableBoards.splice(randomBoardIndex, 1);
-        continue;
-      }
-
-      const randomSpotIndex = Math.floor(Math.random() * emptySpots.length);
-      const { i, j } = emptySpots[randomSpotIndex];
-
-      // Determine the correct board indexes
-      const boardIndexes =
-        this.currentBoard === null
-          ? {
-              boardI: Math.floor(randomBoardIndex / 3),
-              boardJ: randomBoardIndex % 3,
-            }
-          : { boardI: this.currentBoard[0], boardJ: this.currentBoard[1] };
-
-      if (
-        await this.handleCellClick(
-          boardIndexes.boardI,
-          boardIndexes.boardJ,
-          i,
-          j
-        )
-      ) {
-        return true;
-      }
-    }
-
-    return false;
+    return this.handleCellClick(boardI, boardJ, cellI, cellJ);
   }
 
   // Method to perform a random move for AI player
@@ -379,58 +326,16 @@ export class UltimateTicTacToe {
       return false;
     }
 
-    let playableBoards =
-      this.currentBoard === null
-        ? this.boards.flat()
-        : [this.boards[this.currentBoard[0]][this.currentBoard[1]]];
-
-    playableBoards = playableBoards.filter((board) => board.won === -1);
-
-    while (playableBoards.length > 0) {
-      const randomBoardIndex = Math.floor(
-        Math.random() * playableBoards.length
-      );
-      const randomBoard = playableBoards[randomBoardIndex];
-
-      const emptySpots = [];
-      for (let i = 0; i < randomBoard.board.length; i++) {
-        for (let j = 0; j < randomBoard.board[i].length; j++) {
-          if (randomBoard.board[i][j] === 0) {
-            emptySpots.push({ i, j });
-          }
-        }
-      }
-
-      if (emptySpots.length === 0) {
-        playableBoards.splice(randomBoardIndex, 1);
-        continue;
-      }
-
-      const randomSpotIndex = Math.floor(Math.random() * emptySpots.length);
-      const { i, j } = emptySpots[randomSpotIndex];
-
-      // Determine the correct board indexes
-      const boardIndexes =
-        this.currentBoard === null
-          ? {
-              boardI: Math.floor(randomBoardIndex / 3),
-              boardJ: randomBoardIndex % 3,
-            }
-          : { boardI: this.currentBoard[0], boardJ: this.currentBoard[1] };
-
-      if (
-        await this.handleCellClick(
-          boardIndexes.boardI,
-          boardIndexes.boardJ,
-          i,
-          j
-        )
-      ) {
-        return true;
-      }
+    const playableMoves = this.getPlayableMoves();
+    if (playableMoves.length === 0) {
+      console.log("No moves available");
+      return false;
     }
 
-    return false;
+    const randomMoveIndex = Math.floor(Math.random() * playableMoves.length);
+    const [boardI, boardJ, cellI, cellJ] = playableMoves[randomMoveIndex];
+
+    return this.handleCellClick(boardI, boardJ, cellI, cellJ);
   }
 
   evaluationFunction(): number {
@@ -482,15 +387,35 @@ export class UltimateTicTacToe {
     // For each playable board, find all empty cells (where a move can be made)
     playableBoards.forEach(([boardI, boardJ]) => {
       const board = this.boards[boardI][boardJ];
-      for (let cellI = 0; cellI < board.board.length; cellI++) {
-        for (let cellJ = 0; cellJ < board.board[cellI].length; cellJ++) {
-          if (board.board[cellI][cellJ] === 0) {
-            // 0 indicates an empty cell
-            playableMoves.push([boardI, boardJ, cellI, cellJ]);
+      if (board.won === -1) {
+        for (let cellI = 0; cellI < board.board.length; cellI++) {
+          for (let cellJ = 0; cellJ < board.board[cellI].length; cellJ++) {
+            if (board.board[cellI][cellJ] === 0) {
+              // 0 indicates an empty cell
+              playableMoves.push([boardI, boardJ, cellI, cellJ]);
+            }
           }
         }
       }
     });
+
+    // If no moves are found and there are still available moves on the board, check all boards
+    if (playableMoves.length === 0) {
+      for (let i = 0; i < this.boards.length; i++) {
+        for (let j = 0; j < this.boards[i].length; j++) {
+          const board = this.boards[i][j];
+          if (board.won === -1) {
+            for (let cellI = 0; cellI < board.board.length; cellI++) {
+              for (let cellJ = 0; cellJ < board.board[cellI].length; cellJ++) {
+                if (board.board[cellI][cellJ] === 0) {
+                  playableMoves.push([i, j, cellI, cellJ]);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
     return playableMoves;
   }

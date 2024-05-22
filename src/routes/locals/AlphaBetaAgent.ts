@@ -55,7 +55,7 @@ export class AlphaBetaAgent {
 
       for (const move of moves) {
         const newGame = game.clone();
-        newGame.handleCellClick(move[0], move[1], move[2], move[3]);
+        newGame.simulateMove(move[0], move[1], move[2], move[3]);
         const [evaluationScore] = this.minimax(
           newGame,
           depth - 1,
@@ -87,6 +87,23 @@ export class AlphaBetaAgent {
       Infinity,
       game.currentPlayer === 1
     );
+
+    // If no "best" move is found, make a random move
+    if (!bestMove) {
+      return this.getRandomMove(game);
+    }
+
     return bestMove;
+  }
+
+  private getRandomMove(
+    game: UltimateTicTacToe
+  ): [number, number, number, number] | null {
+    const moves = game.getPlayableMoves();
+    if (moves.length === 0) return null;
+
+    // Select a random move from the list of playable moves
+    const randomIndex = Math.floor(Math.random() * moves.length);
+    return moves[randomIndex];
   }
 }

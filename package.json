@@ -38,6 +38,9 @@
   },
   "type": "module",
   "dependencies": {
-    "idb-keyval": "^6.2.1"
+    "idb-keyval": "^6.2.1",
+    "vega": "^5.29.0",
+    "vega-embed": "^6.25.0",
+    "vega-lite": "^5.18.1"
   }
 }

@@ -20,39 +20,36 @@
   async function aiMakeRandomMove() {
     console.log('Random Bot');
     if (await game.aiMakeRandomMove()) {
-      console.log('Moved');
       updateGameState();
       setTimeout(() => {
         if ($globalWinner === -1) {
           aiMakeMove();  // Make next move if game is not over
         }
-      }, 1000); // TODO: current issue is that having these delays will have one of the bots move and then the other moves instantly and theyll think
+      }, 1); // TODO: current issue is that having these delays will have one of the bots move and then the other moves instantly and theyll think
     }
   }
 
   async function aiMinimaxMove() {
     console.log('Minimax Alpha Beta Bot')
     if (await game.aiMinimaxMove()) {
-      console.log('Moved')
       updateGameState();
       setTimeout(() => {
         if ($globalWinner === -1) {
           aiMakeMove();  // Make next move if game is not over
         }
-      }, 1000);
+      }, 1);
     }
   }
 
   async function aiSmartMove() {
     console.log('Smart Bot')
     if (await game.aiSmartMove()) {
-      // console.log('Moved')
       updateGameState();
       setTimeout(() => {
         if ($globalWinner === -1) {
           aiMakeMove();  // Make next move if game is not over
         }
-      }, 1000);
+      }, 1);
     }
   }
 
@@ -75,19 +72,14 @@
   }
 
   function onStrategyChange() {
-    // console.log('Strategy Change:', $strategyX, $strategyO);
     game.strategyO = get(strategyO);
     game.strategyX = get(strategyX);
     if ($globalWinner === -1) {
       if (($currentPlayer === 1 && $strategyX !== 'human') || ($currentPlayer === 2 && $strategyO !== 'human')) {
-        // console.log('AI should move now');
         aiMakeMove();
       }
     }
   }
-
-  $: $strategyX, onStrategyChange(); // Reactively call onStrategyChange when strategyX changes
-  $: $strategyO, onStrategyChange(); // Reactively call onStrategyChange when strategyO changes
 
   async function handleCellClick(boardI: number, boardJ: number, cellI: number, cellJ: number) {
     if ($currentPlayer === 1 && $strategyX === 'human' || $currentPlayer === 2 && $strategyO === 'human') {
@@ -110,6 +102,8 @@
     currentPlayer.set(1); // Reset the current player in the UI
     currentBoard.set(game.currentBoard); // Reset the current active board
     globalWinner.set(game.globalWinner); // Reset the global winner status
+    strategyX.set('human');
+    strategyO.set('human');
   }
 
   async function downloadTelemetry() {
